@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: ls-directory
+spec:
+  steps:
+    - name: ls-directory-la
+      image: alpine
+      script: |
+        #!/bin/sh
+        ls -la /workspace/git-source
+  workspaces:
+    - name: git-source
