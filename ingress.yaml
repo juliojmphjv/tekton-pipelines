@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-el-github-pr
+spec:
+  rules:
+  - host: tekton.julio.ml
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: el-github-pr
+            port:
+              number: 8080
+  ingressClassName: nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+    name: ingress-tekton-dashboard
+spec:
+  rules:
+  - host: dashboard.tekton.julio.ml
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tekton-dashboard
+            port:
+              number: 9097
+  ingressClassName: nginx
