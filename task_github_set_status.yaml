@@ -14,7 +14,6 @@ metadata:
   labels:
     app.kubernetes.io/version: "0.4"
   name: github-set-status
-  namespace: teste
   resourceVersion: "131480"
   uid: 36e25c15-fcf5-4475-9bf4-d7e23aa7ae1d
 spec:
